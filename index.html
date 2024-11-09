@@ -1,0 +1,84 @@
+<html>
+	<head>
+	<title>Sum App</title>
+	<style>
+		*{font-size:2vw;font-family:Calibri;}
+		body{background-color:azure;}
+		h1{border:solid;border-radius:2vw;background-color:white;width:50%;}
+		form{background-color:white;width:50%;padding:20px;}
+	</style>
+	<body>
+	<center>
+		<h1>SUM APP</h1>
+		<form onsubmit="find()">
+			Number:<input type="number" id="num" step="any" placeholder="enter integer">
+			<br/><br/>
+			<input type="submit" value="M1">
+			<input type="submit" value="M2">
+			<input type="submit" value="M3">
+		</form>
+			<h2 id="msg"></h2>
+		<script>
+			function find()
+			{
+				event.preventDefault();
+				let action =document.activeElement.value;
+				let msg=document.getElementById("msg");
+				let num=document.getElementById("num");
+				
+				if(num.value==="")
+				{
+					alert("Please enter integer");
+					msg.innerHTML="";
+					num.focus();
+					return;
+				}
+
+
+				let n=parseFloat(num.value);
+
+				if(action==="M1")
+				{
+
+					
+					let i=1;
+					let sum=0;
+					while(i<=n)
+					{
+						sum=sum+i;
+						i=i+1;
+					}
+					msg.innerHTML="M1-->Sum:-"+sum;
+				}
+
+				if(action==="M2")
+				{
+
+					
+					let i=1;
+					let sum=0;
+					do
+					{
+						sum=sum+i;
+						i=i+1;
+					}while(i<=n)
+					msg.innerHTML="M2-->Sum:-"+sum;
+
+				}
+				if(action==="M3")
+				{
+					let sum=0;
+					for(let i=1;i<=n;i++)
+					{
+						sum=sum+i
+					}
+					msg.innerHTML="M3-->Sum:-"+sum;
+
+				}
+
+
+			}
+		</script>
+		</center>
+	</body>
+</html>
